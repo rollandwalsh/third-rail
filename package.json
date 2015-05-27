@@ -1,0 +1,26 @@
+{
+  "name": "third-rail",
+  "version": "0.0.1",
+  "description": "Third Rail Repertory Theatre's site",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rollandwalsh/third-rail.git"
+  },
+  "keywords": [
+    "Third",
+    "Rail",
+    "theater",
+    "Portland",
+    "Oregon"
+  ],
+  "author": "Rolland Walsh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rollandwalsh/third-rail/issues"
+  },
+  "homepage": "https://github.com/rollandwalsh/third-rail#readme"
+}
