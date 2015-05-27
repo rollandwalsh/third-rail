@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/rollandwalsh/third-rail/issues"
   },
-  "homepage": "https://github.com/rollandwalsh/third-rail#readme"
+  "homepage": "https://github.com/rollandwalsh/third-rail#readme",
+  "dependencies": {
+    "normalize.css": "^3.0.3"
+  }
 }
