@@ -24,6 +24,17 @@
   },
   "homepage": "https://github.com/rollandwalsh/third-rail#readme",
   "dependencies": {
-    "normalize.css": "^3.0.3"
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.3.0",
+    "gulp-header": "^1.2.2",
+    "gulp-jscs": "^1.6.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.3",
+    "jquery": "^2.1.4",
+    "jshint-stylish": "^2.0.0",
+    "normalize.css": "^3.0.3",
+    "run-sequence": "^1.1.0"
   }
 }
