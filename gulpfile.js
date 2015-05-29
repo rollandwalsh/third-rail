@@ -3,6 +3,7 @@ var path = require('path');
 
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
+var sass = require('gulp-sass');
 
 // Temporary solution until gulp 4
 // https://github.com/gulpjs/gulp/issues/355
@@ -29,9 +30,9 @@ gulp.task('copy', [
     'copy:.htaccess',
     'copy:index.html',
     'copy:jquery',
-    'copy:app.css',
     'copy:misc',
-    'copy:normalize'
+    'copy:normalize',
+    'sass'
 ]);
 
 gulp.task('copy:.htaccess', function () {
@@ -42,13 +43,13 @@ gulp.task('copy:.htaccess', function () {
 
 gulp.task('copy:index.html', function () {
     return gulp.src(dirs.src + '/index.html')
-               .pipe(plugins.replace(/{{JQUERY_VERSION}}/g, pkg.dependencies.jquery))
+                 .pipe(plugins.replace(/{{JQUERY_VERSION}}/g, pkg.devDependencies.jquery))
                .pipe(gulp.dest(dirs.dist));
 });
 
 gulp.task('copy:jquery', function () {
     return gulp.src(['node_modules/jquery/dist/jquery.min.js'])
-               .pipe(plugins.rename('jquery-' + pkg.dependencies.jquery + '.min.js'))
+               .pipe(plugins.rename('jquery-' + pkg.devDependencies.jquery + '.min.js'))
                .pipe(gulp.dest(dirs.dist + '/js/vendor'));
 });
 
@@ -69,12 +70,12 @@ gulp.task('copy:app.css', function () {
 
 gulp.task('copy:misc', function () {
     return gulp.src([
-        dirs.src + '/**/*',
-        
-        '!' + dirs.src + '/css/main.css',
-        '!' + dirs.src + '/index.html'
+      dirs.src + '/**/*',
+      
+      '!' + dirs.src + '/scss/*', // Needs fix
+      '!' + dirs.src + '/index.html'
     ], {
-        dot: true
+      dot: true
     }).pipe(gulp.dest(dirs.dist));
 });
 
@@ -83,12 +84,26 @@ gulp.task('copy:normalize', function () {
                .pipe(gulp.dest(dirs.dist + '/css'));
 });
 
+gulp.task('sass', function () {
+  gulp.src(dirs.src + '/scss/**/*.scss')
+    .pipe(sass({ style: 'nested' }).on('error', sass.logError))
+    .pipe(plugins.autoprefixer({
+      browsers: ['last 2 versions', 'ie 10']
+    }))
+    .pipe(gulp.dest(dirs.dist + '/css'));
+});
+ 
+gulp.task('watch', function () {
+  gulp.watch(dirs.src + '/scss/**/*.scss', ['sass']);
+  gulp.watch(dirs.src + '/index.html', ['copy:index.html']);
+});
+
 gulp.task('lint:js', function () {
     return gulp.src([
         'gulpfile.js',
         dirs.src + '/js/*.js',
         dirs.test + '/*.js'
-    ]).pipe(plugins.jscs())
+    ])/* .pipe(plugins.jscs()) */
       .pipe(plugins.jshint())
       .pipe(plugins.jshint.reporter('jshint-stylish'))
       .pipe(plugins.jshint.reporter('fail'));
@@ -102,6 +117,7 @@ gulp.task('build', function (done) {
     runSequence(
         ['clean', 'lint:js'],
         'copy',
+        'watch',
     done);
 });
 

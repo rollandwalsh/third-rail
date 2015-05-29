@@ -22,12 +22,13 @@
   "bugs": {
     "url": "https://github.com/rollandwalsh/third-rail/issues"
   },
-  "homepage": "https://github.com/rollandwalsh/third-rail#readme",
-  "dependencies": {
+  "homepage": "http://thirdrailrep.org/",
+  "devDependencies": {
     "apache-server-configs": "^2.14.0",
     "del": "^1.2.0",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.3.0",
+    "gulp-concat": "^2.5.2",
     "gulp-header": "^1.2.2",
     "gulp-jscs": "^1.6.0",
     "gulp-jshint": "^1.11.0",
@@ -35,6 +36,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.3",
     "gulp-sass": "^2.0.1",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.4",
     "jquery": "^2.1.4",
     "jshint-stylish": "^2.0.0",
     "mocha": "^2.2.5",
