@@ -6,7 +6,7 @@ $button-style: solid !default;
 $button-background: $primary-color !default;
 $button-background-hover: scale-color($button-background, $lightness: -15%) !default;
 $button-color: auto !default;
-$button-radius: 0 !default;
+$button-radius: 5px !default;
 $button-sizes: (
   tiny: 0.7,
   small: 0.8,
@@ -95,11 +95,14 @@ $button-tag-selector: false !default;
     border: 1px solid $background;
     background: transparent;
     color: $background;
+    box-shadow: 0 3px $background;
 
     &:hover, &:focus {
       border-color: scale-color($background, $lightness: 25%);
       background: transparent;
       color: scale-color($background, $lightness: 25%);
+      box-shadow: 0 2px scale-color($background, $lightness: 25%);
+      transform: translateY(1px);
     }
   }
   // Solid is the default
@@ -110,10 +113,13 @@ $button-tag-selector: false !default;
 
     background: $background;
     color: $color;
+    box-shadow: 0 3px scale-color($background, $lightness: -25%);
 
     &:hover, &:focus {
       @if $background-hover == auto {
         background: scale-color($background, $lightness: -15%);
+        box-shadow: 0 2px scale-color($background, $lightness: -50%);
+        transform: translateY(1px);
       }
       @else {
         background: $background-hover;
