@@ -113,11 +113,11 @@ $button-tag-selector: false !default;
 
     background: $background;
     color: $color;
-    box-shadow: 0 3px scale-color($background, $lightness: -25%);
+    box-shadow: 0 3px scale-color($background, $lightness: -50%);
 
     &:hover, &:focus {
       @if $background-hover == auto {
-        background: scale-color($background, $lightness: -15%);
+        background: scale-color($background, $lightness: -10%);
         box-shadow: 0 2px scale-color($background, $lightness: -50%);
         transform: translateY(1px);
       }
