@@ -6,7 +6,7 @@ $button-style: solid !default;
 $button-background: $primary-color !default;
 $button-background-hover: scale-color($button-background, $lightness: -15%) !default;
 $button-color: auto !default;
-$button-radius: 5px !default;
+$button-radius: 5px; // 0 !default;
 $button-sizes: (
   tiny: 0.7,
   small: 0.8,
@@ -32,6 +32,7 @@ $button-tag-selector: false !default;
   padding: $button-padding;
   margin: $button-margin;
   font-size: $button-font-size;
+  font-weight: 700;
   border-radius: $button-radius;
 
   // Dropdown arrow
@@ -92,7 +93,7 @@ $button-tag-selector: false !default;
   $btngroup: false
 ){
   @if $style == hollow {
-    border: 1px solid $background;
+    border: 2px solid $background;
     background: transparent;
     color: $background;
     box-shadow: 0 3px $background;
@@ -113,12 +114,12 @@ $button-tag-selector: false !default;
 
     background: $background;
     color: $color;
-    box-shadow: 0 3px scale-color($background, $lightness: -50%);
+    box-shadow: 0 4px scale-color($background, $lightness: -50%);
 
     &:hover, &:focus {
       @if $background-hover == auto {
         background: scale-color($background, $lightness: -10%);
-        box-shadow: 0 2px scale-color($background, $lightness: -50%);
+        box-shadow: 0 3px scale-color($background, $lightness: -50%);
         transform: translateY(1px);
       }
       @else {
