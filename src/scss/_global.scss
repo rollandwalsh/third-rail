@@ -1,15 +1,12 @@
 /*
   GLOBAL
   ------
-
-  Global styles and settings for Foundation for Apps are stored here. This file must always
-  be imported, no matter what.
-
-  Includes:
-   -
 */
 
-/// @Foundation.settings
+// FONTS
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
 // Global Styles
 // This sets 1rem to be 16px
 $rem-base: 16px;
@@ -35,17 +32,17 @@ $font-weight-bold: bold !default;
 // We use these to control various global styles
 $body-background: #fff !default;
 $body-font-color: #222 !default;
-$body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
+$body-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
 $body-font-weight: $font-weight-normal !default;
 $body-font-style: normal !default;
 $body-antialiased: true;
 
 // Application Colors
-$primary-color: #00558b !default;
+$primary-color: #f47b1e; // #00558b !default;
 $secondary-color: #f1f1f1 !default;
 $alert-color: #F04124 !default;
 $info-color: #A0D3E8 !default;
-$success-color: #43AC6A !default;
+$success-color: #43ac6a; // #43AC6A !default;
 $warning-color: #F08A24 !default;
 $dark-color: #232323 !default;
 $gray: #dfdfdf !default;
