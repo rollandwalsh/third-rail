@@ -13,8 +13,14 @@ $button-sizes: (
   medium: 1,
   large: 1.3,
 ) !default;
-$button-weight: 400 !default;
+$button-weight: (
+  tiny: 400,
+  small: 400,
+  medium: 700,
+  large: 900,
+) !default;
 $button-font-size: 0.9rem !default;
+$button-font-weight: 700 !default;
 $button-opacity-disabled: 0.5 !default;
 $button-tag-selector: false !default;
 ///
@@ -33,6 +39,7 @@ $button-tag-selector: false !default;
   padding: $button-padding;
   margin: $button-margin;
   font-size: $button-font-size;
+  font-weight: $button-font-weight;
   border-radius: $button-radius;
 
   // Dropdown arrow
@@ -52,8 +59,8 @@ $button-tag-selector: false !default;
 }
 
 @mixin button-size($size: medium, $expand: false) {
+  $weight: map-get($button-weight, $size);
   $size: $button-font-size * map-get($button-sizes, $size);
-  $weight: $button-font-weight * map-get($button-sizes, $size);
   font-size: $size;
   font-weight: $weight;
 
