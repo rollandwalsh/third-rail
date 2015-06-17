@@ -7,6 +7,10 @@
 // Foundation Variables
 //
 
+// FONTS
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
 // Data attribute namespace
 // styles get applied to [data-mysite-plugin], etc
 $namespace: false !default;
@@ -241,19 +245,21 @@ $jet           : #222222 !default;
 $black         : #000000 !default;
 
 // We use these as default colors throughout
-$primary-color: #008CBA !default;   // bondi-blue
+$primary-color: #F47B1E !default;   // tr-orange
 $secondary-color: #e7e7e7 !default; // white-lilac
 $alert-color: #f04124 !default;     // cinnabar
+$spring-color: #A4D65E !default;    // tr-spring
 $success-color: #43AC6A !default;   // sea-green
 $warning-color: #f08a24 !default;   // carrot
 $info-color: #a0d3e8 !default;      // cornflower
 
 // We use these to define default font stacks
-$font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
 $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif !default;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace !default;
 
 // We use these to define default font weights
+$font-weight-light: 300 !default;
 $font-weight-normal: normal !default;
 $font-weight-bold: bold !default;
 
@@ -294,7 +300,7 @@ $include-print-styles: true !default;
 $include-js-meta-styles: true !default; // Warning! Meta styles are a dependancy of the Javascript.
 $include-html-global-classes: $include-html-classes !default;
 
-$column-gutter: rem-calc(30) !default;
+$column-gutter: rem-calc(24) !default;
 
 // Media Query Ranges
 $small-breakpoint:  em-calc(640)  !default;

@@ -11,16 +11,20 @@
 
 $include-html-tabs-classes: $include-html-classes !default;
 
-$tabs-navigation-padding: rem-calc(16) !default;
-$tabs-navigation-bg-color: $silver !default;
+$tabs-navigation-padding: rem-calc(8) !default;
+$tabs-navigation-bg-color: $white-smoke !default;
 $tabs-navigation-active-bg-color: $white !default;
-$tabs-navigation-hover-bg-color: scale-color($tabs-navigation-bg-color, $lightness: -6%) !default;
+$tabs-navigation-hover-bg-color: $ghost !default;
 $tabs-navigation-font-color: $jet !default;
-$tabs-navigation-active-font-color: $tabs-navigation-font-color !default;
-$tabs-navigation-font-size: rem-calc(16) !default;
+$tabs-navigation-hover-font-color: $primary-color !default;
+$tabs-navigation-active-font-color: $primary-color !default;
+$tabs-navigation-font-size: rem-calc(14) !default;
 $tabs-navigation-font-family: $body-font-family !default;
+$tabs-navigation-font-weight: $font-weight-bold !default;
+$tabs-navigation-text-transform: uppercase !default;
 
-$tabs-content-margin-bottom: rem-calc(24) !default;
+$tabs-content-bg-color: $tabs-navigation-active-bg-color;
+$tabs-content-margin-bottom: 1rem !default;
 $tabs-content-padding: ($column-gutter/2) !default;
 
 $tabs-vertical-navigation-margin-bottom: 1.25rem !default;
@@ -42,18 +46,24 @@ $tabs-vertical-navigation-margin-bottom: 1.25rem !default;
         > a {
           display: block;
           background-color: $tabs-navigation-bg-color;
+          box-shadow: 0 3px $jet;
           color: $tabs-navigation-font-color;
           font-family: $tabs-navigation-font-family;
           font-size: $tabs-navigation-font-size;
-          padding: $tabs-navigation-padding $tabs-navigation-padding * 2;
+          font-weight: $tabs-navigation-font-weight;
+          padding: $tabs-navigation-padding $tabs-navigation-padding * 3;
+          text-transform: uppercase;
+          transition: all 300ms ease;
 
           &:hover {
             background-color: $tabs-navigation-hover-bg-color;
+            color: $tabs-navigation-hover-font-color;
           }
         }
 
         &.active a {
           background-color: $tabs-navigation-active-bg-color;
+          box-shadow: none;
           color: $tabs-navigation-active-font-color;
         }
       }
@@ -83,6 +93,8 @@ $tabs-vertical-navigation-margin-bottom: 1.25rem !default;
 
     .tabs-content {
       @include clearfix;
+      background-color: $tabs-content-bg-color;
+      padding: rem-calc(0); 
       margin-bottom: $tabs-content-margin-bottom;
       width: 100%;
 
@@ -90,6 +102,7 @@ $tabs-vertical-navigation-margin-bottom: 1.25rem !default;
         display: none;
         float: $default-float;
         padding: $tabs-content-padding 0;
+        transition: all 300ms ease;
         width: 100%;
 
         &.active {

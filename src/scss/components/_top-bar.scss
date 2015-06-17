@@ -13,47 +13,48 @@
 $include-html-top-bar-classes: $include-html-classes !default;
 
 // Background color for the top bar
-$topbar-bg-color: $oil !default;
+$topbar-bg-color: $white !default;
 $topbar-bg: $topbar-bg-color !default;
 
 // Height and margin
-$topbar-height: rem-calc(45) !default;
+$topbar-height: rem-calc(88) !default;
 $topbar-margin-bottom: 0 !default;
 
 // Controlling the styles for the title in the top bar
 $topbar-title-weight: $font-weight-normal !default;
-$topbar-title-font-size: rem-calc(17) !default;
+$topbar-title-font-size: rem-calc(38) !default;
+$topbar-title-text-transform: uppercase !default;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: $white !default;
-$topbar-link-color-hover: $white !default;
-$topbar-link-color-active: $white !default;
-$topbar-link-color-active-hover: $white !default;
+$topbar-link-color: $jet !default;
+$topbar-link-color-hover: $primary-color !default;
+$topbar-link-color-active: $primary-color !default;
+$topbar-link-color-active-hover: scale-color($primary-color, $lightness: -14%) !default;
 $topbar-link-weight: $font-weight-normal !default;
-$topbar-link-font-size: rem-calc(13) !default;
+$topbar-link-font-size: rem-calc(12) !default;
 $topbar-link-hover-lightness: -10% !default; // Darken by 10%
 $topbar-link-bg: $topbar-bg !default;
-$topbar-link-bg-hover: $jet !default;
-$topbar-link-bg-color-hover: $charcoal !default;
-$topbar-link-bg-active: $primary-color !default;
+$topbar-link-bg-hover: $topbar-bg-color !default;
+$topbar-link-bg-color-hover: $topbar-bg-color !default;
+$topbar-link-bg-active: $topbar-bg-color !default;
 $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%) !default;
 $topbar-link-font-family: $body-font-family !default;
-$topbar-link-text-transform: none !default;
+$topbar-link-text-transform: uppercase !default;
 $topbar-link-padding: ($topbar-height / 3) !default;
-$topbar-back-link-size: rem-calc(18) !default;
+$topbar-back-link-size: rem-calc(15) !default;
 $topbar-link-dropdown-padding: rem-calc(20) !default;
 $topbar-button-font-size: .75rem !default;
 $topbar-button-top: 7px !default;
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: $oil !default;
-$topbar-dropdown-link-color: $white !default;
+$topbar-dropdown-bg: $topbar-bg-color !default;
+$topbar-dropdown-link-color: $topbar-link-color !default;
 $topbar-dropdown-link-color-hover: $topbar-link-color-hover !default;
-$topbar-dropdown-link-bg: $oil !default;
-$topbar-dropdown-link-bg-hover: $jet !default;
+$topbar-dropdown-link-bg: $topbar-bg-color !default;
+$topbar-dropdown-link-bg-hover: $topbar-bg-color !default;
 $topbar-dropdown-link-weight: $font-weight-normal !default;
 $topbar-dropdown-toggle-size: 5px !default;
-$topbar-dropdown-toggle-color: $white !default;
+$topbar-dropdown-toggle-color: $jet !default;
 $topbar-dropdown-toggle-alpha: .4 !default;
 
 $topbar-dropdown-label-color: $monsoon !default;
@@ -87,7 +88,7 @@ $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: 
 
 // Sticky Class
 $topbar-sticky-class: ".sticky" !default;
-$topbar-arrows: true !default; //Set false to remove the triangle icon from the menu item
+$topbar-arrows: false !default; //Set false to remove the triangle icon from the menu item
 $topbar-dropdown-arrows: true !default; //Set false to remove the \00bb >> text from dropdown subnavigation li
 
 // Accessibility mixins for hiding and showing the menu dropdown items
@@ -119,6 +120,7 @@ $topbar-dropdown-arrows: true !default; //Set false to remove the \00bb >> text 
     .contain-to-grid {
       width: 100%;
       background: $topbar-bg;
+      border-bottom: 1px solid $white-smoke;
 
       .top-bar {
         margin-bottom: $topbar-margin-bottom;
@@ -215,13 +217,27 @@ $topbar-dropdown-arrows: true !default; //Set false to remove the \00bb >> text 
           font-size: $topbar-title-font-size;
           line-height: $topbar-height;
           margin: 0;
+          text-transform: $topbar-title-text-transform;
 
           a {
             color: $topbar-link-color;
-            display: block;
+            display: table;
             font-weight: $topbar-title-weight;
             padding: 0 $topbar-link-padding;
+            transition: all 300ms ease;
             width: 75%;
+            
+            svg {
+              display: table-cell;
+              max-width: rem-calc(160);
+              vertical-align: text-bottom;
+              .bolt {fill: $primary-color}
+              .third, .rail {fill: $jet}
+            }
+            
+            &:hover {
+              transform: scale(1.4) translateY(-4px);
+            }
           }
         }
       }
@@ -340,13 +356,17 @@ $topbar-dropdown-arrows: true !default; //Set false to remove the \00bb >> text 
           padding-#{$default-float}: $topbar-link-padding;
           padding: 12px 0 12px $topbar-link-padding;
           text-transform: $topbar-link-text-transform;
+          transition: color 300ms ease;
           width: 100%;
 
           &.button {
+            border-width: 1px;
+            box-shadow: none !important;
             font-size: $topbar-link-font-size;
             padding-#{$default-float}: $topbar-link-padding;
             padding-#{$opposite-direction}: $topbar-link-padding;
-            @include button-style($bg:$primary-color);
+            padding-top: rem-calc(4);
+            @include button-style($topbar-bg, false, false, null, $topbar-link-color);
           }
 
           &.button.secondary { @include button-style($bg:$secondary-color); }
@@ -360,7 +380,7 @@ $topbar-dropdown-arrows: true !default; //Set false to remove the \00bb >> text 
           font-size: $topbar-link-font-size;
           padding-#{$default-float}: $topbar-link-padding;
           padding-#{$opposite-direction}: $topbar-link-padding;
-          @include button-style($bg:$primary-color);
+          @include button-style($topbar-bg, false, false, null, $topbar-link-color);
 
           &.secondary { @include button-style($bg:$secondary-color); }
           &.success { @include button-style($bg:$success-color); }

@@ -26,10 +26,10 @@ $table-border-color: $gainsboro !default;
 
 // These control the table head styles
 $table-head-bg: $white-smoke !default;
-$table-head-font-size: rem-calc(14) !default;
+$table-head-font-size: rem-calc(13) !default;
 $table-head-font-color: $jet !default;
 $table-head-font-weight: $font-weight-bold !default;
-$table-head-padding: rem-calc(8 10 10) !default;
+$table-head-padding: rem-calc(8 2) !default;
 
 // These control the table foot styles
 $table-foot-bg: $table-head-bg !default;
@@ -41,12 +41,12 @@ $table-foot-padding: $table-head-padding !default;
 // These control the caption
 $table-caption-bg: transparent !default;
 $table-caption-font-color: $table-head-font-color !default;
-$table-caption-font-size: rem-calc(16) !default;
+$table-caption-font-size: rem-calc(14) !default;
 $table-caption-font-weight: bold !default;
 
 // These control the row padding and font styles
-$table-row-padding: rem-calc(9 10) !default;
-$table-row-font-size: rem-calc(14) !default;
+$table-row-padding: rem-calc(8 2) !default;
+$table-row-font-size: rem-calc(13) !default;
 $table-row-font-color: $jet !default;
 $table-line-height: rem-calc(18) !default;
 
@@ -73,6 +73,7 @@ $table-margin-bottom: rem-calc(20) !default;
       size: $table-caption-font-size;
       weight: $table-caption-font-weight;
     }
+    text-transform: uppercase;
   }
 
   thead {
@@ -109,7 +110,7 @@ $table-margin-bottom: rem-calc(20) !default;
       color: $table-row-font-color;
       font-size: $table-row-font-size;
       padding: $table-row-padding;
-      text-align: $default-float;
+      text-align: center;
     }
 
     &.even,

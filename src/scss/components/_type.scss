@@ -7,8 +7,8 @@
 $include-html-type-classes: $include-html-classes !default;
 
 // We use these to control header font styles
-$header-font-family: $body-font-family !default;
-$header-font-weight: $font-weight-normal !default;
+$header-font-family: "Oswald", Arial, sans-serif !default;
+$header-font-weight: $font-weight-light !default;
 $header-font-style: normal !default;
 $header-font-color: $jet !default;
 $header-line-height: 1.4 !default;
@@ -17,12 +17,12 @@ $header-bottom-margin: .5rem !default;
 $header-text-rendering: optimizeLegibility !default;
 
 // We use these to control header font sizes
-$h1-font-size: rem-calc(44) !default;
-$h2-font-size: rem-calc(37) !default;
-$h3-font-size: rem-calc(27) !default;
-$h4-font-size: rem-calc(23) !default;
-$h5-font-size: rem-calc(18) !default;
-$h6-font-size: 1rem !default;
+$h1-font-size: rem-calc(50) !default;
+$h2-font-size: rem-calc(36) !default;
+$h3-font-size: rem-calc(24) !default;
+$h4-font-size: rem-calc(20) !default;
+$h5-font-size: 1rem !default;
+$h6-font-size: rem-calc(14) !default;
 
 // We use these to control header size reduction on small screens
 $h1-font-reduction: rem-calc(10) !default;
@@ -35,7 +35,7 @@ $h6-font-reduction: 0 !default;
 // These control how subheaders are styled.
 $subheader-line-height: 1.4 !default;
 $subheader-font-color: scale-color($header-font-color, $lightness: 35%) !default;
-$subheader-font-weight: $font-weight-normal !default;
+$subheader-font-weight: $font-weight-light !default;
 $subheader-top-margin: .2rem !default;
 $subheader-bottom-margin: .5rem !default;
 
@@ -46,7 +46,7 @@ $small-font-color: scale-color($header-font-color, $lightness: 35%) !default;
 // We use these to style paragraphs
 $paragraph-font-family: inherit !default;
 $paragraph-font-weight: $font-weight-normal !default;
-$paragraph-font-size: 1rem !default;
+$paragraph-font-size: rem-calc(14) !default;
 $paragraph-line-height: 1.6 !default;
 $paragraph-margin-bottom: rem-calc(20) !default;
 $paragraph-aside-font-size: rem-calc(14) !default;
@@ -92,6 +92,7 @@ $definition-list-margin-bottom: rem-calc(12) !default;
 
 // We use these to style blockquotes
 $blockquote-font-color: scale-color($header-font-color, $lightness: 35%) !default;
+$blockquote-font-size: $paragraph-font-size;
 $blockquote-padding: rem-calc(9 20 0 19) !default;
 $blockquote-border: 1px solid $gainsboro !default;
 $blockquote-cite-font-size: rem-calc(13) !default;
@@ -225,6 +226,13 @@ $align-class-breakpoints:
         @if $anchor-text-decoration-hover != $anchor-text-decoration {
         	text-decoration: $anchor-text-decoration-hover;
         }
+      }
+      
+      &.success {
+        color: $success-color;
+
+        &:hover,
+        &:focus {color: scale-color($success-color, $lightness: -14%)}
       }
 
       img { border:none; }
@@ -397,6 +405,7 @@ $align-class-breakpoints:
 
     /* Blockquotes */
     blockquote {
+      font-size: $blockquote-font-size;
       margin: 0 0 $paragraph-margin-bottom;
       padding: $blockquote-padding;
       border-#{$default-float}: $blockquote-border;
