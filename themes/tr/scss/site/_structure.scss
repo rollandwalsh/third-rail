@@ -1,0 +1,297 @@
+/**
+ * Table of Contents for FoundationPress:
+ *
+ * 1.0 - Custom settings
+ * 2.0 - Typography
+ * 3.0 - Header, sidebar and footer
+ * 4.0 - Content
+ *	4.1 - Pages
+ *	4.2 - Posts
+ *	4.3	- Widgets
+ *	4.4 - Comments
+  *	4.5 - Lists
+  * 4.6 - Forms
+ * 5.0 - Plugins
+
+ * ----------------------------------------------------------------------------
+ */
+
+
+
+/**
+ * 1.0 Custom settings
+ * ----------------------------------------------------------------------------
+ */
+
+hr.dashed {
+  border: 0;
+  border-bottom: 1px dashed $orange;
+  background: $white;
+  margin: rem-calc(0 0 10);
+}
+
+// Reset margin and padding on figure element
+figure { 
+	margin: 0; 
+	padding: 0;
+}
+
+// Add some basic styling for figcaption element
+figcaption {
+	margin-bottom: rem-calc(20);
+	margin-top: rem-calc(10); 
+	color: #6f6f6f; 
+}
+
+// Add the alignment classes used by the WordPress media library
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+blockquote.alignleft,
+img.alignleft {
+	margin: rem-calc(7) rem-calc(24) rem-calc(7) 0;
+}
+
+.wp-caption.alignleft {
+	margin: rem-calc(7) rem-calc(14) rem-calc(7) 0;
+}
+
+blockquote.alignright,
+img.alignright {
+	margin: rem-calc(7) 0 rem-calc(7) rem-calc(24);
+}
+
+// Fix the issue where the WP adminbar overlaps the mobile menu
+#wpadminbar {
+	position: fixed !important;
+}
+
+/**
+ * 2.0 Typography
+ * ----------------------------------------------------------------------------
+ */
+
+h1.entry-title, h4.subheader {text-align: center}
+
+
+/**
+ * 3.0 Header, sidebar and footer
+ * ----------------------------------------------------------------------------
+ */
+
+#pageHeader {
+  background-position: center top;
+  background-repeat: no-repeat;
+//   background-attachment: fixed;
+  background-size: 100%;
+  height: 50vw;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: -1;
+  @media #{$xlarge-up} {height: rem-calc(600)}
+}
+
+#hero {
+}
+
+#logo {
+	bottom: rem-calc(10);
+	left: 0;
+	margin: 0 auto;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+#social {
+	margin-bottom: rem-calc(10)
+}
+
+#pageFooter {
+  h5, li, a {
+    font-size: 90%;
+    line-height: 1;
+    margin-bottom: rem-calc(3);
+  }
+  ul:not(.fa-ul) {
+    list-style-type: none;
+    margin: 0;
+  }
+}
+
+/**
+ * 4.0 Navigation
+ * ----------------------------------------------------------------------------
+ */
+ 
+.top-bar-container {
+  margin-bottom: rem-calc(0);
+	.top-bar-section {
+		.has-form {
+			padding: rem-calc(10 15);
+			input {
+				font-size: rem-calc(11);
+				top: 0;
+			}
+		}
+	}
+}
+
+.tab-bar {
+  .middle img {
+    height: rem-calc(60);
+    margin-top: rem-calc(-5);
+  }
+  .phone-icon {
+    color: $white;
+    display: block;
+    font-size: rem-calc(26);
+    height: rem-calc(50);
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: rem-calc(50);
+  }
+}
+
+.breadcrumbs {
+  margin: rem-calc(5 0);
+  opacity: .5;
+  transition: opacity ease-out 300ms;
+  &:hover {opacity: 1}
+}
+
+/**
+ * 4.0 Content
+ * ----------------------------------------------------------------------------
+ */
+
+
+  /**
+   * 4.1 Pages
+   * ------------------------------------
+   */
+	 
+    // Post
+	 
+    article.post {
+      h1.entry-title, h4.subheader {
+        text-align: center;
+      }
+      .orbit-container {
+        margin: rem-calc(10) auto;
+        .orbit-bullets-container {
+          margin-top: -40px;
+          .orbit-bullets li {border: 1px solid $orange;}
+        }
+      }
+    }
+
+	/**
+	 * 4.2 Posts
+	 * ------------------------------------
+	 */
+
+	article.post {
+  	h4.subheader {margin-bottom: rem-calc(15)}
+	}
+
+
+	/**
+	 * 4.3 Widgets
+	 * ------------------------------------
+	 */
+	 
+  #sidebar {
+    border-left: 1px dashed $orange;
+  }
+  
+  #currentShows {
+    h4 {font-weight: 100}
+  }
+	
+  .card {
+    text-align: center;
+	  .th {
+			margin-bottom: rem-calc(10);
+      position: relative;
+      width: 100%;
+      &:hover {
+	      .overlay {opacity: 1}
+      }
+	    .overlay {
+	      background: rgba($white,.6);
+	      height: 100%;
+	      opacity: 0;
+	      position: absolute;
+	      top: 0;
+  	    text-align: center;
+  	    transition: all 300ms ease-out;
+  	    width: 100%;
+  	    i {line-height: 2}
+	    }
+  	  h4 {
+  	    color: darken($orange, 20%);
+  	    font-weight: 300;
+      	line-height: 1.25;
+      	margin-bottom: 0;
+      	text-align: center;
+      	text-transform: uppercase;
+    	}
+    }
+	}
+
+
+	/**
+	 * 4.4 Comments
+	 * ------------------------------------
+	 */
+
+	// Insert styles here
+
+
+	/**
+	 * 4.5 Lists
+	 * ------------------------------------
+	 */
+
+	.actors, .creatives {
+		margin: 0;
+		li {
+			padding: 0;
+			@media #{$large-up} {
+				&:nth-child(odd) {text-align: left}
+				&:nth-child(even) {text-align: right}
+			}
+			h6 {font-weight: 100}
+			.button {margin-bottom: rem-calc(10)}
+		}
+	}
+
+
+	/**
+	 * 4.6 Forms
+	 * ------------------------------------
+	 */
+
+	// Insert styles here
+
+
+/**
+ * 5.0 Plugins
+ * ----------------------------------------------------------------------------
+ */

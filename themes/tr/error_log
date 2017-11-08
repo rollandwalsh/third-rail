@@ -1,0 +1,2 @@
+[01-Dec-2014 15:05:12 America/Los_Angeles] PHP Fatal error:  Call to undefined function get_header() in /home1/thirdrai/public_html/wp-content/themes/tr/index.php on line 1
+[01-Dec-2014 15:05:13 America/Los_Angeles] PHP Fatal error:  Call to undefined function get_header() in /home1/thirdrai/public_html/wp-content/themes/tr/index.php on line 1
