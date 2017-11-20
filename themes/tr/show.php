@@ -121,7 +121,7 @@
 				$parentID = ($parents) ? $parents[count($parents)-1]: $post->ID;
 			}
 			$parent = get_page( $parentID );
-			$directory = '/home1/thirdrai/public_html/wp-content/themes/tr/assets/img/' . $parent->post_name . '/' . $post->post_name . '/';
+			$directory = '/var/www/html/wp-content/themes/tr/assets/img/' . $parent->post_name . '/' . $post->post_name . '/';
 			$images = glob($directory . "*-small.jpg");
 			$imgCount = count($images);
 			if ($imgCount > 0) {
