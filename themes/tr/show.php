@@ -121,7 +121,7 @@
 				$parentID = ($parents) ? $parents[count($parents)-1]: $post->ID;
 			}
 			$parent = get_page( $parentID );
-			$directory = '/var/www/html/wp-content/themes/tr/assets/img/' . $parent->post_name . '/' . $post->post_name . '/';
+			$directory = '/home/rolland/var/www/html/wp-content/themes/tr/assets/img/' . $parent->post_name . '/' . $post->post_name . '/';
 			$images = glob($directory . "*-small.jpg");
 			$imgCount = count($images);
 			if ($imgCount > 0) {
@@ -138,7 +138,7 @@
 				echo '<h3 class="text-center">Production Images</h3>';
 				echo '<ul class="large-block-grid-' . $num . ' medium-block-grid-3 small-block-grid-2" data-clearing>';
 				foreach($images as $image) {
-					$thumb = str_replace('/home1/thirdrai/public_html', get_site_url() , $image);
+					$thumb = str_replace('/home/rolland/var/www/html', get_site_url() , $image);
 					$image = str_replace('-small', '', $thumb);
 				  echo '<li><a href="' . $image . '" class="th" title=""><img src="' . $thumb . '" alt="" data-caption="Photo by Owen Carey"></a></li>';
 				}
