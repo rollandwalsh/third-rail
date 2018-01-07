@@ -18,7 +18,8 @@
   				
   				<?php $args = array(
   					'post_type' 			=> 'page',
-  				  'post_parent'			=> $post->ID,
+  				  	'post_parent'			=> $post->ID,
+					'max_num_pages'		=>	'15',
 					  'meta_key' 				=> 'Close Date',
 					  'orderby' 				=> 'meta_value',
 					  'order' 					=> 'ASC',
