@@ -71,15 +71,17 @@
             			  <h6>- <?php echo $venue ?> -</h6>
  <?php 
 	  			  if ($venue == 'Winningstad Theater') {
-	    			  $address = '1111 SW Broadway, Portland, OR 97205';
+	    			  	$address = '1111 SW Broadway, Portland, OR 97205';
 	  			  } elseif ($venue == 'CoHo Theater') {
-	    			  $address = '2257 NW Raleigh St, Portland, OR 97210';
+	    			  	$address = '2257 NW Raleigh St, Portland, OR 97210';
 	  			  } elseif ($venue == 'World Trade Center Theater') {
 	  			  	$address = '121 SW Salmon Street Portland, OR 97204';
 	  			  } elseif ($venue == 'Echo Theatre') {
-  	  			  $address = '1515 SE 37th Ave, Portland, OR 97214';
+  	  			  	$address = '1515 SE 37th Ave, Portland, OR 97214';
   	  			} elseif ($venue == 'Imago Theatre') {
     	  			$address = '17 SE 8th Ave, Portland, OR 97214';
+				  } elseif ($venue == 'Lake Theater and Cafe') {
+					  $address = '106 N State Street Lake Oswego, OR  97034';
 	  			  } else { $address = ''; }
 	  			 ?>
   			  <h6 class="subheader"><?php echo $address ?></h6>           			  
