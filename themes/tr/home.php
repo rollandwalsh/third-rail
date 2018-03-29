@@ -74,6 +74,12 @@
 <hr class="dashed">
 -->
 
+<div class="row">
+	<div class="large-12 columns">
+		<?php the_content(); ?>
+	</div>
+</div>
+
 <div class="row cards" data-equalizer>
   <?php $pages = get_pages( array( 'include' => array( 1634, 197, 50 ) ) ); ?> 
 	<?php foreach ( $pages as $page ) : ?>
