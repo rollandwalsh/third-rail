@@ -15,7 +15,7 @@
 				<?php the_content(); ?>
 				<?php
   				$season_number =  (date("n") > 7 ? date("Y")-2005 : date("Y") - 2006);
-  				$current_season = "Season " . $season_number;
+  				$current_season = "Season 12"; // . $season_number;
 
 				  // Create array of current company members
 				  $args = array(
