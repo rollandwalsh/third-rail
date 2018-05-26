@@ -33,7 +33,7 @@
           
           $args = array(
   					'post_type' 			=> 'page',
-  				  'post_parent'			=> '18',
+  				  'post_parent'			=> '1634',
 					  'meta_key' 				=> 'Close Date',
 					  'orderby' 				=> 'meta_value',
 					  'order' 					=> 'ASC',
@@ -205,7 +205,7 @@
   				
   				 $args = array(
   					'post_type' 			=> 'page',
-  				  'post_parent'			=> '18',
+  				  'post_parent'			=> '1634',
 					  'meta_key' 				=> 'Close Date',
 					  'orderby' 				=> 'meta_value',
 					  'order' 					=> 'ASC',
