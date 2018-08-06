@@ -79,7 +79,7 @@
 
       		<header id="pageHeader">
 	      		<?php if ( is_front_page() ) {?>
-	      			<a href="/company-history/coming-soon/the-music-man/" style="display: block"><img src="<?php echo $largehero; ?>" alt="The Music Man" id="hero"></a>
+				<a href="/the-music-man/" style="display: block"><img src="<?php echo $largehero; ?>" alt="2017/2018 Season" alt="The Music Man" id="hero"></a>
 	      		<?php } else { ?>
 	      			<img src="<?php echo $largehero; ?>" alt="<?php wp_title(); ?> Hero" id="hero">
 	      		<?php } ?>
