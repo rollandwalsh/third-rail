@@ -13,7 +13,7 @@
   			</header>
   			<?php do_action('foundationPress_page_before_entry_content'); ?>
   			<div class="entry-content">
-	        <a href="<?php echo get_post_custom_values('Tickets URL')[0]; ?>" class="button expand success"><i class="fa fa-ticket fa-lg"></i> NT Live Punch Card</a>
+	        <a href="https://thirdrailrep.secure.force.com/ticket#sections_a0F1N00000mZGrSUAW" class="button expand success"><i class="fa fa-ticket fa-lg"></i> NT Live Punch Card</a>
   				<?php the_content(); ?>
   				
   				<?php $args = array(

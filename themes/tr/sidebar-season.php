@@ -23,7 +23,7 @@
 		
 		if ( $query->have_posts() ) : ?>
 			<h3 class="text-center"><a href="/tr/national-theatre-live/" title="National Theatre Live">National Theatre Live</a></h3>
-			<div class="small-12 columns"><a href="https://thirdrailrep.secure.force.com/ticket#sections_a0Fo000000lnVGsEAM" class="button expand success"><i class="fa fa-ticket fa-lg"></i> NT Live Punch Card</a></div>
+			<div class="small-12 columns"><a href="https://thirdrailrep.secure.force.com/ticket#sections_a0F1N00000mZGrSUAW" class="button expand success"><i class="fa fa-ticket fa-lg"></i> NT Live Punch Card</a></div>
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 			
 				<div class="small-12 columns card">
