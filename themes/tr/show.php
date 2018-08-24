@@ -32,7 +32,7 @@
   			<?php } ?>
   			<?php if ( $post->post_parent == 50 ) { ?>
   			  <div class="panel callout text-center">
-  			    <p class="text-center">Third Rail's Hi-Definition Screenings feature amazing productions from London's National Theatre, Almeida Theatre and Branagh Theatre captured live onstage and presented locally in high-definition video. NT Live Punch Card holders may use their cards for any Third Rail Hi-Definition Screening.</a>
+  			    <p class="text-center">Third Rail's Hi-Definition Screenings feature amazing productions from London's National Theatre, captured live onstage and presented locally in high-definition video. NT Live Punch Card holders may use their cards for any Third Rail Hi-Definition Screening.</p>
   			  </div>
   			<?php } ?>
   			<div class="panel radius text-center">
