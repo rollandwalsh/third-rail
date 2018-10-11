@@ -79,7 +79,7 @@
 
       		<header id="pageHeader">
 	      		<?php if ( is_front_page() ) {?>
-				<a href="/company-history/coming-soon/john/" style="display: block"><img src="<?php echo $largehero; ?>" alt="2017/2018 Season" alt="John" id="hero"></a>
+				<a href="/announcing-our-upcoming-season/" style="display: block"><img src="<?php echo $largehero; ?>" alt="2017/2018 Season" alt="John" id="hero"></a>
 	      		<?php } else { ?>
 	      			<img src="<?php echo $largehero; ?>" alt="<?php wp_title(); ?> Hero" id="hero">
 	      		<?php } ?>
